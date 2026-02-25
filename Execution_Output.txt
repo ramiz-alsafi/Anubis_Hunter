@@ -1,7 +1,8 @@
+============================================================
 Anubis v6.1 — Threat Intelligence Hunter
 By Ramiz Alsafi
 ============================================================
-Started: 2026-02-25 14:25:04
+Started: 2026-02-26 00:04:30
 Lookback: 168 hours
 
 API KEY STATUS:
@@ -37,35 +38,35 @@ API KEY STATUS:
 
 🦠 Fetching Malware from MalwareBazaar...
 
-🪟 Fetching Microsoft Security Updates (MSRC)...
-
 🪟 Fetching Windows CVEs from NVD...
 
+🪟 Fetching Microsoft Security Updates (MSRC)...
+
 📅 Calculating Patch Tuesday...
+Fetching from Vulners API...
+
 ✓ Patch Tuesday: February 10, 2026 (Released)
+
+🦊 Fetching IOCs from ThreatFox...
+
+👽 Fetching from AlienVault OTX...
 
 🔓 Fetching from OSV.dev...
   ℹ️  OSV.dev: package-name query required (no bulk feed) — coverage via NVD/GitHub/RedHat
 
-Fetching from Vulners API...
-
-👽 Fetching from AlienVault OTX...
-🦊 Fetching IOCs from ThreatFox...
+🌐 Fetching from Shodan InternetDB (no-auth, free)...
+📈 CVE Trends API deprecated - skipping
 
 ⛏️  Fetching IPsum Threat Intelligence (replaces ThreatMiner)...
 
+🚫 Fetching from AbuseIPDB...
+  ✓ AbuseIPDB: loaded 25 IPs from cache (age: 2.9h)
 
 💔 Fetching from Have I Been Pwned...
-📈 CVE Trends API deprecated - skipping
-
-⚔️  MITRE ATT&CK: using local CWE mapping (no network call)
 
 🏭 Fetching CISA ICS Advisories...
 
-🌐 Fetching from Shodan InternetDB (no-auth, free)...
-
-🚫 Fetching from AbuseIPDB...
-  ✓ AbuseIPDB: loaded 25 IPs from cache (age: 0.4h)
+⚔️  MITRE ATT&CK: using local CWE mapping (no network call)
 
 🕷️  Fetching Feodo Tracker (Botnet C2)...
 
@@ -74,131 +75,132 @@ Fetching from Vulners API...
 🐧 Fetching Ubuntu Security Notices (RSS feed)...
 
 🧅 Fetching Tor Exit Nodes...
-  ✓ [1/58] abuseip
-  ✓ [2/58] cve_trends
-  ✓ [3/58] patch_tuesday
-  ✓ [4/58] mitre
-  ✓ [5/58] osv
+  ✓ [1/58] osv
+  ✓ [2/58] mitre
+  ✓ [3/58] abuseip
+  ✓ [4/58] cve_trends
+  ✓ [5/58] patch_tuesday
+✓ Found 1529 actively exploited CVEs in KEV
+
+🔒 Fetching Blocklist.de...
+  ✓ [6/58] kev
+  ✗ CISA ICS ics-advisories.xml: HTTP 403
+✓ Found 3 Feodo C2 IPs
+
+💣 Fetching Metasploit module CVE coverage (official Rapid7/GitHub)...
+  ✓ [7/58] feodo
   🔍 Enriching 3 IPs via InternetDB...
+  ✓ MSF: 3077 CVEs with Metasploit modules (24h cache)
+
+Fetching URLScan.io malicious URL feed...
+✓ Found 30 Tor exit nodes (from raw.githubusercontent.com)
+
+Fetching vulnerable hosts from LeakIX...  ✓ [8/58] gn_threats
+  ✓ [9/58] tor
   Vulners API: HTTP 403 — falling back to CIRCL
 
 Fetching from CIRCL CVE API (fallback)...
-✓ Found 3 Feodo C2 IPs
-✓ Found 30 Tor exit nodes (from raw.githubusercontent.com)
+✓ Found 0 recent breaches
 
-💣 Fetching Metasploit module CVE coverage (official Rapid7/GitHub)...  ✓ [6/58] feodo
-  ✓ [7/58] tor
-
-🔒 Fetching Blocklist.de...
-  ✗ CISA ICS ics-advisories.xml: HTTP 403
-
-  ✓ MSF: 3075 CVEs with Metasploit modules (24h cache)
-
-Fetching URLScan.io malicious URL feed...
-  ✓ [8/58] gn_threats
-✓ Found 13 new exploits
-✓ Found 20 GitHub advisories
+  ✓ [10/58] hibp
 
 Fetching exposed RDP hosts from LeakIX...
-Fetching vulnerable hosts from LeakIX...  ✓ [9/58] exploits
-  ✓ [10/58] github
-
-
-✓ Found 30 phishing URLs from OpenPhish
+✓ Found 13 new exploits
+✓ Found 20 GitHub advisories
 
 🔮 EPSS + AttackerKB enrichment active (replaces Snyk - free via FIRST.org + attackerkb.com)
 
 🎩 Fetching Red Hat Security Advisories...
-  ✓ [11/58] phish
-  ✓ [12/58] intel_feed
-✓ Found 1527 actively exploited CVEs in KEV
-✓ Found 0 recent breaches
 
 🦅 Fetching Talos/Community IP Blacklist...
-  ✓ [13/58] kev
+✓ Found 30 blocked IPs from Blocklist.de
+  ✓ [11/58] exploits
+  ✓ [12/58] intel_feed
+  ✓ [13/58] github
+  ✓ [14/58] blocklist
 
 🔥 Fetching Emerging Threats Compromised IPs...
-  ✓ [14/58] hibp
+✓ Found 1 Windows CVEs
+
+📦 Fetching PacketStorm Security Advisories...
   ✗ CISA ICS icsa.xml: HTTP 403
 ✗ CISA ICS: all endpoints failed — skipping
 
-📦 Fetching PacketStorm Security Advisories...
-  ✓ [15/58] cisa_ics
-✓ Found 30 blocked IPs from Blocklist.de
-  URLScan.io: 403 on 'overall malicious verdict' — trying lower-privilege query...
-  ✓ [16/58] blocklist
-
 ✅ Fetching VulnCheck KEV...
-✓ Found 0 Windows CVEs
+  ✓ [15/58] windows_cves
+  ✓ [16/58] cisa_ics
+✓ Found 30 phishing URLs from OpenPhish
 
 🔒 Fetching CISA Ransomware Advisories...
-  ✓ [17/58] windows_cves
+  ✓ [17/58] phish
 ✓ Found 30 IPsum high-confidence threat IPs (score ≥3)
-  Found 20 exposed RDP services from LeakIX
 
-🛡️ Fetching Fortinet PSIRT Advisories...
-✓ Found 50 FireHOL threat entries (L1+L2)
+🛡️ Fetching Fortinet PSIRT Advisories...  ✓ [18/58] threatminer
+  URLScan.io: 403 on 'overall malicious verdict' — trying lower-privilege query...
 
-🛡️ Fetching Palo Alto Networks Advisories...  LeakIX: HTTP 204
+  LeakIX: HTTP 204
   Found 0 vulnerable/exposed hosts from LeakIX
-✓ Found 20 OTX pulses
-  ✓ [18/58] threatminer
-  ✓ [19/58] censys_rdp
-  ✓ [20/58] spamhaus
-  ✓ [21/58] censys_vuln
-  ✓ [22/58] otx
 
-🛡️ Fetching F5/BIG-IP Security Advisories...
-
+🛡️ Fetching Palo Alto Networks Advisories...
+  ✓ [19/58] censys_vuln
 ✓ Found 20 Red Hat CVEs
 
 🛡️ Fetching Cisco Security Advisories...
-
-🛡️ Fetching Juniper Networks Advisories...
-
-🛡️ Fetching Citrix/NetScaler Security Advisories...
-  ✓ [23/58] redhat
-  URLScan.io: 403 on 'community malicious verdict' — trying lower-privilege query...
-✓ Found 10 Ubuntu security notices (from atom.xml)
+  ✓ [20/58] redhat
 ✓ Found 30 malicious URLs from URLHaus
-
-🛡️ Fetching SonicWall PSIRT Advisories...
   ⚠️  CISA ransomware advisory-xml: HTTP 403
 
-🛡️ Fetching Check Point Security Advisories...
-  ✓ [24/58] ubuntu
-  ✓ [25/58] urlhaus
+🛡️ Fetching Juniper Networks Advisories...
+  ✓ [21/58] urlhaus
+  Found 20 exposed RDP services from LeakIX
+
+🛡️ Fetching F5/BIG-IP Security Advisories...
+  ✓ [22/58] censys_rdp
+✓ Found 50 FireHOL threat entries (L1+L2)
+
+🛡️ Fetching Citrix/NetScaler Security Advisories...
+  ✓ [23/58] spamhaus
   Found 0 CVEs from CIRCL (Vulners fallback) (CVSS >= 7.0)
 
-🛡️ Fetching WatchGuard Security Advisories...  ✓ [26/58] vulners
+🛡️ Fetching SonicWall PSIRT Advisories...
+  ✓ [24/58] vulners
+✓ Found 10 Ubuntu security notices (from atom.xml)
 
+🛡️ Fetching Check Point Security Advisories...  ✓ [25/58] ubuntu
+
+  URLScan.io: 403 on 'community malicious verdict' — trying lower-privilege query...
   ⚠️  CISA ransomware json-v1: HTTP 403
+✓ Found 14 Microsoft updates (pre-lookback window)
+
+🛡️ Fetching WatchGuard Security Advisories...
+  ✓ [26/58] msrc
 ✓ Found 50 Emerging Threats IPs
 
 🛡️ Fetching Sophos Security Advisories (8s timeout)...
   ✓ [27/58] emerging
-✓ Found 14 Microsoft updates (pre-lookback window)
-
-🛡️ Fetching Aruba/HPE Security Advisories...  ✓ [28/58] msrc
-
-  URLScan.io: 403 on 'malicious/phishing tags' — trying lower-privilege query...
-  ⚠️  CISA ransomware json-v2: HTTP 403
-✓ Found 3 Shodan InternetDB enriched hosts
-
-🛡️ Fetching Zyxel Security Advisories...
-  ✓ [29/58] shodan
-✓ Found 0 F5 advisories
-
-🛡️ Fetching Barracuda Security Advisories...  ✓ [30/58] fw_f5
 ✓ Found 0 new malware samples
 
-  ✓ [31/58] malware
+🛡️ Fetching Aruba/HPE Security Advisories...
+  🔍 NVD API: HTTP 200
+  ✓ [28/58] malware
+✓ Found 1497 CVEs from NVD
+✓ Found 20 OTX pulses
+
+🛡️ Fetching Zyxel Security Advisories...  ✓ [29/58] cves
+  ✓ [30/58] otx
+✓ Found 5 Check Point advisories
+
+
+🛡️ Fetching Barracuda Security Advisories...
+  ✓ [31/58] fw_checkpoint
 
 🛡️ Fetching pfSense/Netgate Security Advisories...
 ✓ Found 0 PacketStorm advisories
 
 🎯 Fetching Zero Day Initiative (ZDI) Published Advisories...
   ✓ [32/58] packetstorm
+  ⚠️  CISA ransomware json-v2: HTTP 403
+  URLScan.io: 403 on 'malicious/phishing tags' — trying lower-privilege query...
 ✓ Found 30 ThreatFox IOCs
 
 ⚔️  AttackerKB: enrichment now done per-CVE in process_threats (see fetch_attackerkb_for_cves)
@@ -206,77 +208,79 @@ Fetching vulnerable hosts from LeakIX...  ✓ [9/58] exploits
 📡 Fetching SANS ISC Threat Diary...
   ✓ [33/58] threatfox
   ✓ [34/58] attackerkb
-✓ Found 7 Palo Alto advisories
+✓ Found 3 Shodan InternetDB enriched hosts
 
 📰 Fetching Security News + Advisories (72h window, 11 sources, concurrent)...
-  ✓ [35/58] fw_paloalto
+  ✓ [35/58] shodan
+✓ Found 7 Palo Alto advisories
+
+🔐 Fetching Abuse.ch SSL IP Blacklist...
+✓ Found 0 F5 advisories
+
+🇪🇺 Fetching CERT/NCSC Threat Reports...
+  ✓ [36/58] fw_paloalto
+  ✓ [37/58] fw_f5
 ✓ Found 100 Talos/community IPs (source: cinsscore)
 ✓ Found 20 VulnCheck KEV entries
 
-🔐 Fetching Abuse.ch SSL IP Blacklist...
-
-🇪🇺 Fetching CERT/NCSC Threat Reports...
-  ✓ [36/58] talos
-  ✓ [37/58] vulncheck_kev
+🦠 Fetching Hybrid Analysis public malware feed...
+  ✓ [38/58] talos
+  ✓ [39/58] vulncheck_kev
   ⚠️  CISA ransomware alerts-rss: HTTP 403
 ✗ CISA ransomware feed unavailable
-
-🦠 Fetching Hybrid Analysis public malware feed...  ✓ [38/58] cisa_ransomware
-
-✓ Found 0 Aruba/HPE advisories
-  ✓ [39/58] fw_aruba
-  URLScan.io query 'recent live scans (broadest fallback)' returned 0 results — trying next...
-  ✓ [40/58] gn_benign
-✓ Found 0 Barracuda advisories
-✓ Found 5 WatchGuard advisories
-  ✓ [41/58] fw_barracuda
-  ✓ [42/58] fw_watchguard
-✓ Found 5 Check Point advisories
+  ✓ [40/58] cisa_ransomware
 ✓ Found 1 Zyxel advisories
-  ✓ [43/58] fw_checkpoint
-  ✓ [44/58] fw_zyxel
-  ✓ BleepingComputer             OK (8 items)
-✓ Found 0 pfSense/Netgate advisories
-  ✓ [45/58] fw_pfsense
+  ✓ [41/58] fw_zyxel
 ✓ Found 0 SSL blacklist IPs from Abuse.ch
+✓ Found 0 Barracuda advisories
+  ✓ [42/58] sslbl
+  ✓ [43/58] fw_barracuda
+  ✓ BleepingComputer             OK (8 items)
+  URLScan.io query 'recent live scans (broadest fallback)' returned 0 results — trying next...
+✓ Found 0 pfSense/Netgate advisories
+✓ Found 0 Aruba/HPE advisories
+  ✓ [44/58] gn_benign
+  ✓ [45/58] fw_pfsense
+  ✓ [46/58] fw_aruba
   ✗ www.cisa.gov: HTTP 403
   ✗ WiredSecurity                OK (0 items)
-  ✓ [46/58] sslbl
-✓ Found 3 SANS ISC diary entries
-  ✓ [47/58] sans_isc
   ✓ SecurityAffairs              OK (8 items)
-  ✗ KrebsOnSecurity              OK (0 items)
-  ✗ SCMagazine                   HTTP 403
-✓ Found 5 Fortinet advisories
-  ✓ TheHackerNews                OK (8 items)
-  ✓ [48/58] fw_fortinet
-  ✓ DarkReading                  OK (3 items)
 ✓ Found 0 Citrix advisories
-  ✓ [49/58] fw_citrix
-  ✓ SecurityWeek                 OK (4 items)
-✓ Found 0 SonicWall advisories
-  ✓ InfoSecurityMagazine         OK (7 items)
-  ✓ SANS-ISC-RSS                 OK (1 items)
-  ✓ [50/58] fw_sonicwall
-  ✓ Hybrid Analysis: 30 malware samples
-  ✓ [51/58] hybridanalysis
-  ✓ HackRead                     OK (5 items)
-✓ Found 30 ZDI advisories
-  ✓ [52/58] zdi
-✓ Total security news: 44 items from 11 active sources
-  ✓ [53/58] security_news
+  ✗ SCMagazine                   HTTP 403
+  ✓ TheHackerNews                OK (8 items)
+  ✗ KrebsOnSecurity              OK (0 items)
+  ✓ [47/58] fw_citrix
+✓ Found 0 SANS ISC diary entries
+  ✓ [48/58] sans_isc
+  ✓ DarkReading                  OK (4 items)
+✓ Found 5 Fortinet advisories
+  ✓ [49/58] fw_fortinet
+✓ Found 5 WatchGuard advisories
+  ✓ [50/58] fw_watchguard
 ✓ Found 5 Cisco advisories
-  ✓ [54/58] fw_cisco
+  ✓ [51/58] fw_cisco
+  ✓ InfoSecurityMagazine         OK (7 items)
+✓ Found 0 SonicWall advisories
+  ✓ [52/58] fw_sonicwall
+  ✗ SANS-ISC-RSS                 OK (0 items)
+✓ Found 30 ZDI advisories
+  ✓ [53/58] zdi
+  ✓ SecurityWeek                 OK (6 items)
+  ✓ Hybrid Analysis: 30 malware samples
+  ✓ [54/58] hybridanalysis
   ✗ www.ncsc.gov.uk: HTTP 404
 ✗ CERT/NCSC: all endpoints failed — skipping
   ✓ [55/58] certeu
-✓ Found 0 Juniper advisories
-  ✓ [56/58] fw_juniper
+  ✓ HackRead                     OK (6 items)
+✓ Total security news: 47 items from 11 active sources
+  ✓ [56/58] security_news
+
+  ⏳ Still running [2]: fw_juniper (8s), fw_sophos (8s)
+
 ✓ Found 0 Sophos advisories
   ✓ [57/58] fw_sophos
-  🔍 NVD API: HTTP 200
-✓ Found 1514 CVEs from NVD
-  ✓ [58/58] cves
+✓ Found 1 Juniper advisories
+  ✓ [58/58] fw_juniper
 ✅ Fetched all 58 sources!
 
 
@@ -284,16 +288,16 @@ Fetching vulnerable hosts from LeakIX...  ✓ [9/58] exploits
 📡 RESOURCE HEALTH REPORT
 ══════════════════════════════════════════════════════════════════════
 
-✅ FETCHED & ENRICHED (33 sources):
+✅ FETCHED & ENRICHED (34 sources):
   Source                         Friendly Name                 Records  MITRE Mapped
   ────────────────────────────── ──────────────────────────── ────────  ──────────────
-  gn_threats                     MSF Modules (Rapid7)            3,075  ~ Feed only
-  kev                            CISA KEV                        1,527  ~ Feed only
-  cves                           NVD CVE API                     1,514  ✓ CWE+Keyword
+  gn_threats                     MSF Modules (Rapid7)            3,077  ~ Feed only
+  kev                            CISA KEV                        1,529  ~ Feed only
+  cves                           NVD CVE API                     1,497  ✓ CWE+Keyword
   talos                          Talos IP Blacklist                100  ~ IP/IOC only
   emerging                       Emerging Threats IPs               50  ~ IP/IOC only
   spamhaus                       Spamhaus DROP                      50  ~ IP/IOC only
-  security_news                  Security News RSS                  44  ✓ Keyword
+  security_news                  Security News RSS                  47  ✓ Keyword
   blocklist                      Blocklist.de                       30  ~ IP/IOC only
   phish                          OpenPhish                          30  ~ IP/IOC only
   threatfox                      ThreatFox IOCs                     30  ✓ Keyword
@@ -316,10 +320,11 @@ Fetching vulnerable hosts from LeakIX...  ✓ [9/58] exploits
   fw_fortinet                    Fortinet PSIRT                      5  ~ Feed only
   fw_watchguard                  WatchGuard PSIRT                    5  ~ Feed only
   feodo                          Feodo Tracker                       3  ~ IP/IOC only
-  sans_isc                       SANS ISC                            3  ~ Feed only
   shodan                         Shodan InternetDB (free)            3  ~ Feed only
+  fw_juniper                     Juniper Advisories                  1  ~ Feed only
   fw_zyxel                       Zyxel Advisories                    1  ~ Feed only
   patch_tuesday                  Patch Tuesday                       1  ~ Feed only
+  windows_cves                   NVD Windows CVEs                    1  ✓ CWE+Keyword
 
 ℹ️  PLAN-LIMITED SOURCES — 0 records (API tier restriction, not a bug):
   • attackerkb                     AttackerKB                   ↳ INTENTIONAL STUB — per-CVE enrichment runs in process_threats() instead
@@ -329,7 +334,6 @@ Fetching vulnerable hosts from LeakIX...  ✓ [9/58] exploits
   • fw_barracuda                   Barracuda PSIRT              ↳ Barracuda PSIRT — no advisories published in 7-day lookback window
   • fw_citrix                      Citrix Advisories            ↳ Citrix PSIRT — RSS feed occasionally empty; check support.citrix.com manually
   • fw_f5                          F5 Advisories                ↳ F5 BIG-IP — RSS feed returned 0 entries in current window
-  • fw_juniper                     Juniper Advisories           ↳ Juniper PSIRT — RSS feed returned 0 entries in current window
   • fw_pfsense                     pfSense Advisories           ↳ pfSense/Netgate — advisory RSS infrequently updated
   • fw_sonicwall                   SonicWall PSIRT              ↳ SonicWall PSIRT — JSON endpoint scrape returned 0; format may have changed
   • fw_sophos                      Sophos Advisories            ↳ Sophos advisory RSS — returned 0; check sophos.com manually
@@ -341,15 +345,15 @@ Fetching vulnerable hosts from LeakIX...  ✓ [9/58] exploits
   • packetstorm                    PacketStorm RSS              ↳ PacketStorm RSS — blocks scrapers; sporadically returns 0 items
   • sslbl                          SSLBL Abuse.ch               ↳ Abuse.ch SSL blacklist — CSV often empty or 0 IPs during scanning gaps
   • vulners                        Vulners API                  ↳ Vulners API — set VULNERS_API_KEY for CVE data; falls back to CIRCL (unreliable)
-  • windows_cves                   NVD Windows CVEs             ↳ NVD Windows CVEs — LOOKBACK window may precede last publication batch
 
-⚠️  SILENT FAILURES — returned 0 records, no exception (3 sources):
+⚠️  SILENT FAILURES — returned 0 records, no exception (4 sources):
   These sources responded (no crash) but gave back nothing.
   Likely causes: rate limit, feed format change, 204/empty body.
 
   • certeu                         CERT/NCSC
   • cisa_ics                       CISA ICS Advisories
   • cisa_ransomware                CISA Ransomware
+  • sans_isc                       SANS ISC
 
 🔑 SKIPPED — Missing API Key (1 sources):
   • intel_feed                     Snyk/Intel Feed              → needs: SNYK_API_KEY (optional)
@@ -358,22 +362,22 @@ Fetching vulnerable hosts from LeakIX...  ✓ [9/58] exploits
 
 ══════════════════════════════════════════════════════════════════════
 📊 SUMMARY:
-  ✅ Active sources:          33  (6,770 total records)
-  ℹ️  Stubs/Plan-limited:      20  (by design or paid-tier — see report above)
-  ⚠️  True silent failures:     3  (responded but unexpectedly empty)
+  ✅ Active sources:          34  (6,759 total records)
+  ℹ️  Stubs/Plan-limited:      18  (by design or paid-tier — see report above)
+  ⚠️  True silent failures:     4  (responded but unexpectedly empty)
   🔑 Missing API keys:         1  (skipped, no crash)
   💀 Hard failures:            0  (exception caught)
   📡 Total tasks attempted:   57
 ══════════════════════════════════════════════════════════════════════
 
-🛡️  Total firewall advisories collected: 28
+🛡️  Total firewall advisories collected: 29
 🎯 ZDI advisories collected:             30
-🔬 NVD CVE enrichment active:          1514 CVEs fetched
-📡 SANS ISC diary entries:                3
-📰 Security news items:                   44
+🔬 NVD CVE enrichment active:          1497 CVEs fetched
+📡 SANS ISC diary entries:                0
+📰 Security news items:                   47
 
 🔍 Enriching IOCs (ip-api.com + URLScan.io)...
-✓ IOC enrichment: 15 IPs (ip-api.com+AbuseIPDB) + 15 URLs (URLScan.io)
+✓ IOC enrichment: 8 IPs (ip-api.com+AbuseIPDB) + 12 URLs (URLScan.io)
 
 📊 Processing ALL threat intelligence (50+ sources)...
 
@@ -381,134 +385,108 @@ Fetching vulnerable hosts from LeakIX...  ✓ [9/58] exploits
 
 🔍 Enriching 38 threat IPs (ip-api.com + AbuseIPDB)...
   ✓ Enriched 20/38 IPs (ip-api.com + AbuseIPDB)
-🔫 MSF module coverage: 3075 CVEs with confirmed Metasploit exploit modules
+🔫 MSF module coverage: 3077 CVEs with confirmed Metasploit exploit modules
 
-🔮 Fetching EPSS scores (KEV-first priority + multi-batch, ALL CVEs)...
-  🔮 EPSS: querying 1730 CVEs (200 KEV-priority, 1530 others) in batches of 100
+🔮 Fetching EPSS scores (v5.1: KEV-first priority + multi-batch up to 500 CVEs)...
+  🔮 EPSS: querying 500 CVEs (201 KEV-priority, 299 others) in batches of 100
   🔮 EPSS batch 1: HTTP 200 | 100 CVEs
-    ✓ Batch 1: 100/100 scored (running total: 100)
+    ✓ Batch 1: 99/100 scored (running total: 99)
   🔮 EPSS batch 2: HTTP 200 | 100 CVEs
-    ✓ Batch 2: 100/100 scored (running total: 200)
+    ✓ Batch 2: 100/100 scored (running total: 199)
   🔮 EPSS batch 3: HTTP 200 | 100 CVEs
-    ✓ Batch 3: 78/100 scored (running total: 278)
+    ✓ Batch 3: 93/100 scored (running total: 292)
   🔮 EPSS batch 4: HTTP 200 | 100 CVEs
-    ✓ Batch 4: 90/100 scored (running total: 368)
+    ✓ Batch 4: 93/100 scored (running total: 385)
   🔮 EPSS batch 5: HTTP 200 | 100 CVEs
-    ✓ Batch 5: 92/100 scored (running total: 460)
-  🔮 EPSS batch 6: HTTP 200 | 100 CVEs
-    ✓ Batch 6: 84/100 scored (running total: 544)
-  🔮 EPSS batch 7: HTTP 200 | 100 CVEs
-    ✓ Batch 7: 83/100 scored (running total: 627)
-  🔮 EPSS batch 8: HTTP 200 | 100 CVEs
-    ✓ Batch 8: 82/100 scored (running total: 709)
-  🔮 EPSS batch 9: HTTP 200 | 100 CVEs
-    ✓ Batch 9: 87/100 scored (running total: 796)
-  🔮 EPSS batch 10: HTTP 200 | 100 CVEs
-    ✓ Batch 10: 84/100 scored (running total: 880)
-  🔮 EPSS batch 11: HTTP 200 | 100 CVEs
-    ✓ Batch 11: 80/100 scored (running total: 960)
-  🔮 EPSS batch 12: HTTP 200 | 100 CVEs
-    ✓ Batch 12: 86/100 scored (running total: 1046)
-  🔮 EPSS batch 13: HTTP 200 | 100 CVEs
-    ✓ Batch 13: 89/100 scored (running total: 1135)
-  🔮 EPSS batch 14: HTTP 200 | 100 CVEs
-    ✓ Batch 14: 82/100 scored (running total: 1217)
-  🔮 EPSS batch 15: HTTP 200 | 100 CVEs
-    ✓ Batch 15: 76/100 scored (running total: 1293)
-  🔮 EPSS batch 16: HTTP 200 | 100 CVEs
-    ✓ Batch 16: 76/100 scored (running total: 1369)
-  🔮 EPSS batch 17: HTTP 200 | 100 CVEs
-    ✓ Batch 17: 77/100 scored (running total: 1446)
-  🔮 EPSS batch 18: HTTP 200 | 30 CVEs
-    ✓ Batch 18: 29/30 scored (running total: 1475)
-  ✓ EPSS total: 1475/1730 CVEs scored
-  ✓ EPSS enrichment: 1475/1730 CVEs scored
+    ✓ Batch 5: 93/100 scored (running total: 478)
+  ✓ EPSS total: 478/500 CVEs scored
+  ✓ EPSS enrichment: 478/1717 CVEs scored
 
 🎯 Building ZDI cross-correlation map (CVE ID + product keyword fallback)...
-  ✓ ZDI: 30 CVEs with ZDI advisories, 3 product keywords indexed
+  ✓ ZDI: 29 CVEs with ZDI advisories, 3 product keywords indexed
 
 🔬 Building NVD CVE detail enrichment (high-priority CVEs)......
 
 🔬 NVD CVE Detail Enrichment: querying 60 high-priority CVEs...
-  ✓ NVD enrichment: 39/60 CVEs enriched with CWE + refs + exploit signals
-  ✓ AttackerKB: 39 CVEs with non-zero scores (queried 39)
+  ✓ NVD enrichment: 38/60 CVEs enriched with CWE + refs + exploit signals
+  ✓ AttackerKB: 38 CVEs with non-zero scores (queried 38)
 
 📰 Building security news cross-correlation map...
-  ✓ News coverage: 2 CVEs mentioned in security news
+  ✓ News coverage: 4 CVEs mentioned in security news
 ✓ All enrichment layers ready
 
-✓ Processed 1930 threats (before MSRC/Windows/Patch Tuesday)
+✓ Processed 1913 threats (before MSRC/Windows/Patch Tuesday)
 
-🔍 DEBUG: Regular CVE IDs: 1514 | MSRC to process: 14
+🔍 DEBUG: Regular CVE IDs: 1497 | MSRC to process: 14
 🔍 DEBUG: MSRC added: 14, skipped: 0
 
 🎯 Processing 30 ZDI advisories...
 
-📡 Processing 3 SANS ISC diary entries...
+📡 Processing 0 SANS ISC diary entries...
 
-📰 Processing 41 keyword-only security news alerts...
+📰 Processing 42 keyword-only security news alerts...
 
-🔗 Cross-source CVE deduplication (2217 threats pre-dedup)...
-  ✓ Deduplication complete: 2199 unique threats (18 duplicates merged)
+🔗 Cross-source CVE deduplication (2200 threats pre-dedup)...
+  ✓ Deduplication complete: 2181 unique threats (19 duplicates merged)
 
 🎯 v5.7 Multi-source accuracy validation pass...
-  ✓ Accuracy pass: 1 threats upgraded (confidence/exploit_status)
+  ✓ Accuracy pass: 0 threats upgraded (confidence/exploit_status)
+✓ Connected to PostgreSQL: anubis_db@localhost
+✓ DB run started (run_id=1)
 
-✓ Creating new threat intelligence database
+⚠️  Existing file is missing columns {'Type', 'Description', 'ID'} — schema mismatch.
+    Backing up old file and starting fresh database.
+    Backup saved: threat_intelligence_log_backup_20260225_220702.xlsx
 ✓ Database updated: threat_intelligence_log.xlsx
-✓ Total entries: 2199
+✓ Total entries: 2181
+
+💾 Saving 2181 threats to PostgreSQL...
+  ✓ Batch 1: 500 threats saved
+  ✓ Batch 2: 500 threats saved
+  ✓ Batch 3: 500 threats saved
+  ✓ Batch 4: 470 threats saved
+  ✓ Batch 5: 181 threats saved
+✓ DB complete: 2151 new | 0 updated | 0 errors
+✓ DB run finished (run_id=1, new=2151, updated=0)
+
+============================================================
+🐘 POSTGRESQL DATABASE STATS
+============================================================
+  Total threats in DB:    2,092
+  P1 Critical:            112
+  P2 High:                55
+  CISA KEV:               32
+  With MSF exploit:       0
+  Trending:               75
+  High EPSS (≥50%):       2
+  In the wild:            0
+  New last 24h:           2,092
+  New last 7 days:        2,092
+  Avg CVSS score:         6.75
+  Last updated:           2026-02-25 22:07:04.280560+00:00
+============================================================
 
 📊 Applying Excel formatting (AutoFilter + Dashboard)...
   ✓ AutoFilter applied to all columns
-  ✓ Styled 2199 data rows with severity colour coding
-  ✓ Dashboard created with 27 threat type rows + COUNTIFS formulas
+  ✓ Styled 2181 data rows with severity colour coding
+  ✓ Dashboard created with 26 threat type rows + COUNTIFS formulas
   ✓ AutoFilter + freeze panes applied to main sheet
   ✓ Risk heatmap + bar + pie charts added to dashboard
   ✓ Saved: threat_intelligence_log.xlsx
 
 🔵 Adding PowerBI_Export sheet...
-  ✓ PowerBI_Export sheet added (2199 rows × 27 cols)
+  ✓ PowerBI_Export sheet added (2181 rows × 27 cols)
   ✓ PowerBI_Export sheet saved
 
 Generating HTML dashboard → anubis_threat_dashboard.html
-  HTML dashboard written: anubis_threat_dashboard.html (2150KB)
+  HTML dashboard written: anubis_threat_dashboard.html (2126KB)
   ✓ Dashboard: anubis_threat_dashboard.html — open in browser or import into Power BI via Get Data → Web
 
-🐘 Syncing to PostgreSQL...
-✓ Connected to PostgreSQL: anubis_db@localhost
-✓ DB run started (run_id=1)
-
-💾 Saving 2199 threats to PostgreSQL...
-  ✓ Batch 1: 500 threats saved
-  ✓ Batch 2: 500 threats saved
-  ✓ Batch 3: 500 threats saved
-  ✓ Batch 4: 470 threats saved
-  ✓ Batch 5: 199 threats saved
-✓ DB complete: 2169 new | 0 updated | 0 errors
-✓ DB run finished (run_id=1, new=2169, updated=0)
-
-============================================================
-🐘 POSTGRESQL DATABASE STATS
-============================================================
-  Total threats in DB:    2,109
-  P1 Critical:            0
-  P2 High:                0
-  CISA KEV:               31
-  With MSF exploit:       0
-  Trending:               76
-  High EPSS (≥50%):       2
-  In the wild:            0
-  New last 24h:           2,109
-  New last 7 days:        2,109
-  Avg CVSS score:         0.00
-  Last updated:           2026-02-25 12:28:14.062596+00:00
-============================================================
-
 Sending threat report email...
-Report email sent to ****@gmail.com
+Report email sent to ramizalsafi.1997@gmail.com
 ✓ Last run time updated
 
 ============================================================
 Process completed successfully.
-Finished: 2026-02-25 14:28:14
+Finished: 2026-02-26 00:07:16
 ============================================================
