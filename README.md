@@ -64,6 +64,26 @@ Threat Feeds (40+)
   ├── Interactive HTML Dashboard        │
   └── Email Report (with attachments)   │
   └─────────────────────────────────────┘
+       ↓
+  ┌─────────────────────────────────────┐
+  │         Host Defense Layer          │
+  │                                     │
+  │  Wazuh Agent (EC2)                  │  ← Phase 6 ✅
+  ├── Log Collection (auth, syslog,     │
+  │   kernel, dpkg, apt, mail,          │
+  │   cloud-init, postgresql, chrony,   │
+  │   SSM, journald, dmesg)             │
+  ├── File Integrity Monitoring         │
+  │   (/etc, /bin, SSH keys, /Anubis)   │
+  ├── Rootcheck & Syscollector          │
+  ├── Custom Detection Rules            │
+  │   (brute force, reverse shell,      │
+  │   malware staging, off-hours SSH,   │
+  │   privilege escalation, new users)  │
+  └── Active Response (firewall-drop)   │
+  └─────────────────────────────────────┘
+       ↓
+  Wazuh Manager 
 ```
 - Wazuh agent 
 - Full defense mode: auth, syslog, kernel, dpkg, apt, mail, cloud-init,
