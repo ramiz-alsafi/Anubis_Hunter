@@ -505,7 +505,7 @@ Generating HTML dashboard → anubis_threat_dashboard.html
 ============================================================
 
 Sending threat report email...
-Report email sent to ramizalsafi.1997@gmail.com
+Report email sent to ****@gmail.com
 ✓ Last run time updated
 
 ============================================================
