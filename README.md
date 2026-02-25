@@ -65,6 +65,14 @@ Threat Feeds (40+)
   └── Email Report (with attachments)   │
   └─────────────────────────────────────┘
 ```
+- Wazuh agent 
+- Full defense mode: auth, syslog, kernel, dpkg, apt, mail, cloud-init,
+  postgresql, chrony, SSM, journald, dmesg logs all collected
+- File integrity monitoring on /etc, /bin, /sbin, SSH keys, /home/ubuntu/Anubis
+- Active response enabled (firewall-drop on brute force)
+- PostgreSQL backend live: 2199 threats synced on first run (anubis_db.py)
+- EPSS now scores ALL CVEs (removed 500-cap), IOC enrichment uncapped
+- anubis_db.py: proper typed schema with run tracking and threat_stats view"
 
 ---
 
