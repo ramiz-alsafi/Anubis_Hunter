@@ -60,7 +60,7 @@ Threat Feeds (40+)
        ↓
   ┌─────────────────────────────────────┐
   │           Output Layer              │
-  ├── PostgreSQL DB (persistent/upsert) │  ← Phase 5 ✅
+  ├── PostgreSQL DB (persistent/upsert) │ 
   ├── Excel Database (formatted)        │
   ├── Interactive HTML Dashboard        │
   └── Email Report (with attachments)   │
@@ -69,7 +69,7 @@ Threat Feeds (40+)
   ┌─────────────────────────────────────┐
   │         Host Defense Layer          │
   │                                     │
-  │  Wazuh Agent (EC2)                  │  ← Phase 6 🔄 In Progress
+  │  Wazuh Agent (EC2)                  │  
   ├── Log Collection (auth, syslog,     │
   │   kernel, dpkg, apt, mail,          │
   │   cloud-init, postgresql, chrony,   │
@@ -89,7 +89,7 @@ Threat Feeds (40+)
 
 ---
 
-## 🛡️ Host Defense (Phase 6 — In Progress)
+## 🛡️ Host Defense 
 
 The EC2 instance running Anubis is monitored by a **Wazuh agent** deployed in full defense mode. This is not just a SIEM demo — it's actively protecting the platform that generates the threat intel.
 
@@ -106,7 +106,7 @@ Check the `screenshots/` directory for sanitized real alert examples captured li
 
 ---
 
-## 🗄️ Database Schema (Phase 5)
+## 🗄️ Database Schema 
 
 PostgreSQL backend with:
 
