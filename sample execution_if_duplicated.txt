@@ -1,0 +1,36 @@
+============================================================
+Anubis v6.1 — Threat Intelligence Hunter
+By Ramiz Alsafi
+============================================================
+Started: 2026-02-27 18:55:58
+Lookback: 168 hours
+
+API KEY STATUS:
+  [OK]   SMTP Host
+  [OK]   AbuseIPDB
+  [OK]   Vulners
+  [OK]   AlienVault OTX
+  [OK]   AttackerKB
+  [OK]   VulnCheck
+  [OK]   URLScan.io
+  [OK]   LeakIX
+  [--]   Email Delivery
+  [FREE] Shodan InternetDB  -- free, no key (internetdb.shodan.io)
+  [FREE] ip-api.com         -- free, no key (IP geo/ASN/proxy/hosting)
+  [FREE] Rapid7/MSF         -- free, no key (Metasploit CVE coverage)
+  -> 8 keys active | 1 missing
+⏰ Last run was 0.4 hours ago
+✓ Recent run found, skipping (runs every 1h)
+
+⏭️  Skipping - already ran recently
+======================================================================
+
+============================================================
+🧹 POST-RUN CLEANUP
+============================================================
+  ✓ Nothing to delete — directory already clean
+  ✅ Kept: AnbuisDB, Anubis_hunter_v6_4.py, __pycache__, anubis_db.py, anubis_schema.sql, anubis_threat_dashboard.html, threat_intelligence_log.xlsx
+
+🌐 NGINX SYNC
+  ✅ Dashboard synced → /var/www/anubis/anubis_threat_dashboard.html
+  ✓ Permissions set: 644
