@@ -1,4 +1,4 @@
-ubuntu@123.123.123.123:~/Anubis$ python3 Anubis_hunter_v6_4.py
+ubuntu@123.123.123.123(not real :DDgive it a shot, please :DD):~/Anubis$ python3 Anubis_hunter_v6_4.py
 ============================================================
 Anubis v6.1 — Threat Intelligence Hunter
 By Ramiz Alsafi
