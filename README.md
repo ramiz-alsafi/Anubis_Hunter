@@ -133,8 +133,8 @@ Check the `screenshots/` directory for sanitized real alert examples captured li
 Anubis is now live on the public internet. The interactive HTML dashboard auto-updates on every run.
 
 **Stack:**
-- **Nginx** reverse proxy serving static dashboard from `/var/www/anubis`
-- **Let's Encrypt** SSL certificate via Certbot (auto-renews every 90 days)
+- **Nginx** reverse proxy serving static dashboard
+- **Let's Encrypt** SSL certificate via Certbot
 - **DuckDNS** free subdomain — `anubispro.duckdns.org`
 - **UFW** firewall — hardened inbound rules, sensitive ports locked
 
@@ -174,12 +174,7 @@ PostgreSQL backend with:
 - Postfix (for email delivery via Gmail relay)
 - Linux (Ubuntu 22.04+ recommended)
 - AWS EC2 t3.micro or equivalent (1GB RAM minimum)
-
-**Optional — 10x NVD enrichment speed:**
-```bash
-export NVD_API_KEY="your-free-key"
-# Free API key: https://nvd.nist.gov/developers/request-an-api-key
-```
+- **10x NVD enrichment speed:**
 
 ---
 
