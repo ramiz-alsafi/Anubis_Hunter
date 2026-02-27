@@ -10,7 +10,7 @@ By **Ramiz Alsafi** | Deployed on **AWS EC2** | 🌐 **[anubispro.duckdns.org](h
 
 Anubis is a self-hosted threat intelligence platform that runs on a schedule and automatically:
 
-- Pulls from **40+ threat intelligence sources** (NVD, CISA KEV, Exploit-DB, MalwareBazaar, URLHaus, AlienVault OTX, Shodan, AbuseIPDB, and more)
+- Pulls from **50+ threat intelligence sources** (NVD, CISA KEV, Exploit-DB, MalwareBazaar, URLHaus, AlienVault OTX, Shodan, AbuseIPDB, and more)
 - Enriches **every single CVE** with **EPSS scores**, **MITRE ATT&CK mappings**, **NVD detail enrichment**, and **MSF module coverage** — no caps, full coverage
 - Deduplicates and cross-correlates threats across all sources
 - Risk-scores every threat using CVSS, EPSS, KEV status, exploit availability, and attacker activity
