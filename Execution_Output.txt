@@ -1,12 +1,12 @@
+ubuntu@123.123.123.123:~/Anubis$ python3 Anubis_hunter_v6_4.py
 ============================================================
 Anubis v6.1 — Threat Intelligence Hunter
 By Ramiz Alsafi
 ============================================================
-Started: 2026-02-26 15:43:52
+Started: 2026-02-27 16:45:52
 Lookback: 168 hours
 
 API KEY STATUS:
-  [OK]   Email Delivery
   [OK]   SMTP Host
   [OK]   AbuseIPDB
   [OK]   Vulners
@@ -15,10 +15,11 @@ API KEY STATUS:
   [OK]   VulnCheck
   [OK]   URLScan.io
   [OK]   LeakIX
+  [--]   Email Delivery
   [FREE] Shodan InternetDB  -- free, no key (internetdb.shodan.io)
   [FREE] ip-api.com         -- free, no key (IP geo/ASN/proxy/hosting)
   [FREE] Rapid7/MSF         -- free, no key (Metasploit CVE coverage)
-  -> 9 keys active | 0 missing
+  -> 8 keys active | 1 missing
 ⚠️  First run detected - executing now
 ✓ Proceeding with COMPLETE threat intelligence collection...
 
@@ -34,250 +35,248 @@ API KEY STATUS:
 
 🎣 Fetching Phishing URLs from OpenPhish (replaces dead PhishTank)...
 
-🦠 Fetching Malware from MalwareBazaar...
-
 💥 Fetching Exploits from Exploit-DB...
+
+🦠 Fetching Malware from MalwareBazaar...
 
 🪟 Fetching Microsoft Security Updates (MSRC)...
 
 🪟 Fetching Windows CVEs from NVD...
-
-📅 Calculating Patch Tuesday...
-✓ Patch Tuesday: February 10, 2026 (Released)
-
 Fetching from Vulners API...
+📅 Calculating Patch Tuesday...
 
 👽 Fetching from AlienVault OTX...
+
+✓ Patch Tuesday: February 10, 2026 (Released)
+
+
+🦊 Fetching IOCs from ThreatFox...
+
 🔓 Fetching from OSV.dev...
 
 ⛏️  Fetching IPsum Threat Intelligence (replaces ThreatMiner)...
   ℹ️  OSV.dev: package-name query required (no bulk feed) — coverage via NVD/GitHub/RedHat
 
-🦊 Fetching IOCs from ThreatFox...
-
 🌐 Fetching from Shodan InternetDB (no-auth, free)...
+📈 CVE Trends API deprecated - skipping
+
+🚫 Fetching from AbuseIPDB...
+  ✓ AbuseIPDB: loaded 25 IPs from cache (age: 0.9h)
 
 💔 Fetching from Have I Been Pwned...
 
-
-🚫 Fetching from AbuseIPDB...📈 CVE Trends API deprecated - skipping
-
-🛑 Fetching FireHOL Threat Blocklists (replaces Spamhaus)...
-  ✓ [1/58] patch_tuesday
-  ✓ [2/58] osv
-  ✓ [3/58] cve_trends
-
+🏭 Fetching CISA ICS Advisories...
 
 ⚔️  MITRE ATT&CK: using local CWE mapping (no network call)
 
 🕷️  Fetching Feodo Tracker (Botnet C2)...
 
+🛑 Fetching FireHOL Threat Blocklists (replaces Spamhaus)...
+
 🐧 Fetching Ubuntu Security Notices (RSS feed)...
 
-🏭 Fetching CISA ICS Advisories...
-  ✓ [4/58] mitre
-  ✗ CISA ICS ics-advisories.xml: HTTP 403
-  🔍 Enriching 3 IPs via InternetDB...
+🧅 Fetching Tor Exit Nodes...
+  ✓ [1/58] cve_trends
+  ✓ [2/58] abuseip
+  ✓ [3/58] mitre
+  ✓ [4/58] osv
+  ✓ [5/58] patch_tuesday
+✓ Found 3 Feodo C2 IPs
+
+🔒 Fetching Blocklist.de...
   Vulners API: HTTP 403 — falling back to CIRCL
 
 Fetching from CIRCL CVE API (fallback)...
-✓ Found 3 Feodo C2 IPs
-
-🧅 Fetching Tor Exit Nodes...
-✓ Found 13 new exploits
-
-🔒 Fetching Blocklist.de...
-  ✓ [5/58] feodo
-  ✓ [6/58] exploits
-✓ Found 1529 actively exploited CVEs in KEV
-✓ Found 0 recent breaches
-  ✓ [7/58] kev
-  ✓ [8/58] hibp
-✓ Found 25 malicious IPs from AbuseIPDB (cached for 6h)
-
-Fetching URLScan.io malicious URL feed...
-
-💣 Fetching Metasploit module CVE coverage (official Rapid7/GitHub)...
-  ✓ [9/58] abuseip
-
-Fetching vulnerable hosts from LeakIX...
-  ✗ CISA ICS icsa.xml: HTTP 403
-✗ CISA ICS: all endpoints failed — skipping
-
-Fetching exposed RDP hosts from LeakIX...
-  ✓ [10/58] cisa_ics
-✓ Found 30 phishing URLs from OpenPhish
+  ✓ [6/58] feodo
+  🔍 Enriching 3 IPs via InternetDB...
 ✓ Found 30 Tor exit nodes (from raw.githubusercontent.com)
 
+💣 Fetching Metasploit module CVE coverage (official Rapid7/GitHub)...
+  ✓ [7/58] tor
+  ✓ MSF: 3077 CVEs with Metasploit modules (24h cache)
+
+Fetching URLScan.io malicious URL feed...
+  ✓ [8/58] gn_threats
+✓ Found 13 new exploits
+
+Fetching vulnerable hosts from LeakIX...
+  ✓ [9/58] exploits
+✓ Found 30 blocked IPs from Blocklist.de
+✓ Found 1529 actively exploited CVEs in KEV
+✓ Found 0 recent breaches
+
+Fetching exposed RDP hosts from LeakIX...
+
 🔮 EPSS + AttackerKB enrichment active (replaces Snyk - free via FIRST.org + attackerkb.com)
-  ✓ [11/58] phish
 
-🦅 Fetching Talos/Community IP Blacklist...✓ Found 20 GitHub advisories
+🎩 Fetching Red Hat Security Advisories...  ✓ [10/58] kev
+  ✓ [11/58] blocklist
+✓ Found 55 CISA ICS entries (from KEV feed)
+✓ Found 20 GitHub advisories
 
-  ✓ [12/58] tor
-  ✓ [13/58] intel_feed
+🦅 Fetching Talos/Community IP Blacklist...  ✓ [12/58] hibp
+✓ Found 30 phishing URLs from OpenPhish
 
-🎩 Fetching Red Hat Security Advisories...
-  ✓ [14/58] github
-
-🔥 Fetching Emerging Threats Compromised IPs...
-✓ Found 50 FireHOL threat entries (L1+L2)
+✓ Found 1 Windows CVEs
 
 📦 Fetching PacketStorm Security Advisories...
-✓ Found 1 Windows CVEs
-  ✓ [15/58] spamhaus
-  ✓ [16/58] windows_cves
+
+🔥 Fetching Emerging Threats Compromised IPs...
 
 ✅ Fetching VulnCheck KEV...
-✓ Found 30 IPsum high-confidence threat IPs (score ≥3)
+
+  ✓ [13/58] intel_feed
+  ✓ [14/58] cisa_ics
+  ✓ [15/58] github
+  ✓ [16/58] windows_cves
 
 🔒 Fetching CISA Ransomware Advisories...
-  ✓ [17/58] threatminer
-✓ Found 30 blocked IPs from Blocklist.de
-  Found 20 exposed RDP services from LeakIX
+  ✓ [17/58] phish
   URLScan.io: 403 on 'overall malicious verdict' — trying lower-privilege query...
+✓ Found 0 new malware samples
 ✓ Found 16 Microsoft updates (pre-lookback window)
-  Found 0 CVEs from CIRCL (Vulners fallback) (CVSS >= 7.0)
-✓ Found 10 Ubuntu security notices (from atom.xml)
-
-🛡️ Fetching Cisco Security Advisories...
 
 🛡️ Fetching Fortinet PSIRT Advisories...
-  ✓ [18/58] blocklist
-  ✓ [19/58] censys_rdp
-  ✓ [20/58] msrc
-  ✓ [21/58] ubuntu
-  ✓ [22/58] vulners
+  ✓ [18/58] msrc
+  ✓ [19/58] malware
+✓ Found 50 FireHOL threat entries (L1+L2)
+
+🛡️ Fetching Palo Alto Networks Advisories...
+✓ Found 30 IPsum high-confidence threat IPs (score ≥3)
   LeakIX: HTTP 204
   Found 0 vulnerable/exposed hosts from LeakIX
 
+🛡️ Fetching Cisco Security Advisories...
+  ✓ [20/58] spamhaus
+  ✓ [21/58] threatminer
+  ✓ [22/58] censys_vuln
+
 🛡️ Fetching F5/BIG-IP Security Advisories...
+
 🛡️ Fetching Juniper Networks Advisories...
-
-  ✓ [23/58] censys_vuln
-
-🛡️ Fetching Palo Alto Networks Advisories...
+✓ Found 10 Ubuntu security notices (from atom.xml)
 
 🛡️ Fetching Citrix/NetScaler Security Advisories...
-✓ Found 20 Red Hat CVEs
+  ✓ [23/58] ubuntu
+  ⚠️  CISA ransomware stopransomware-json: HTTP 403
+✓ Found 30 ThreatFox IOCs
 
 🛡️ Fetching SonicWall PSIRT Advisories...
-  ⚠️  CISA ransomware advisory-xml: HTTP 403
-  ✓ [24/58] redhat
-✓ Found 30 malicious URLs from URLHaus
+  ✓ [24/58] threatfox
+  Found 20 exposed RDP services from LeakIX
 
 🛡️ Fetching Check Point Security Advisories...
-  ✓ [25/58] urlhaus
+  ✓ [25/58] censys_rdp
   URLScan.io: 403 on 'community malicious verdict' — trying lower-privilege query...
-  ⚠️  CISA ransomware json-v1: HTTP 403
-✓ Found 20 OTX pulses
-✓ Found 0 PacketStorm advisories
-
-🛡️ Fetching Sophos Security Advisories (8s timeout)...
-  ✓ [26/58] otx
-  ✓ [27/58] packetstorm
+✓ Found 20 Red Hat CVEs
 
 🛡️ Fetching WatchGuard Security Advisories...
-✓ Found 50 Emerging Threats IPs
+  ✓ [26/58] redhat
+✓ Found 20 VulnCheck KEV entries
+  🔍 NVD API: HTTP 200
+
+🛡️ Fetching Sophos Security Advisories (8s timeout)...
+✓ Found 20 OTX pulses
+  ✓ [27/58] vulncheck_kev
+  ✓ [28/58] otx
 
 🛡️ Fetching Aruba/HPE Security Advisories...
-  ✓ [28/58] emerging
-  URLScan.io: 403 on 'malicious/phishing tags' — trying lower-privilege query...
-  ⚠️  CISA ransomware json-v2: HTTP 403
-✓ Found 7 Palo Alto advisories
+✓ Found 1306 CVEs from NVD
 
 🛡️ Fetching Zyxel Security Advisories...
-  ✓ [29/58] fw_paloalto
-✓ Found 100 Talos/community IPs (source: cinsscore)
-✓ Found 20 VulnCheck KEV entries
+  ✓ [29/58] cves
+  Found 0 CVEs from CIRCL (Vulners fallback) (CVSS >= 7.0)
+  ⚠️  CISA ransomware stopransomware-v2: HTTP 403
+✓ Found 30 malicious URLs from URLHaus
 
 🛡️ Fetching Barracuda Security Advisories...
-  URLScan.io query 'recent live scans (broadest fallback)' returned 0 results — trying next...
-✓ Found 0 F5 advisories
+  ✓ [30/58] vulners
+✓ Found 50 Emerging Threats IPs
+
+🛡️ Fetching pfSense/Netgate Security Advisories...
+  ✓ [31/58] emerging
+  URLScan.io: 403 on 'malicious/phishing tags' — trying lower-privilege query...
+  ✓ [32/58] urlhaus
+
+🎯 Fetching Zero Day Initiative (ZDI) Published Advisories...
+✓ Found 7 Palo Alto advisories
 
 ⚔️  AttackerKB: enrichment now done per-CVE in process_threats (see fetch_attackerkb_for_cves)
 
 📡 Fetching SANS ISC Threat Diary...
-  ✓ [30/58] talos
-  ✓ [31/58] vulncheck_kev
-  ✓ [32/58] gn_benign
-  ✓ [33/58] fw_f5
-  ✓ [34/58] attackerkb
-
-🛡️ Fetching pfSense/Netgate Security Advisories...
-
-🎯 Fetching Zero Day Initiative (ZDI) Published Advisories...
-✓ Found 5 Check Point advisories
+✓ Found 0 F5 advisories
 
 📰 Fetching Security News + Advisories (72h window, 11 sources, concurrent)...
-  ✓ [35/58] fw_checkpoint
-  ⚠️  CISA ransomware alerts-rss: HTTP 403
-✗ CISA ransomware feed unavailable
+  ✓ [33/58] fw_paloalto
+  ✓ [34/58] attackerkb
+  ✓ [35/58] fw_f5
+✓ Found 0 PacketStorm advisories
 
 🔐 Fetching Abuse.ch SSL IP Blacklist...
-  ✓ [36/58] cisa_ransomware
-✓ Found 0 Aruba/HPE advisories
-
-🇪🇺 Fetching CERT/NCSC Threat Reports...
-  ✓ [37/58] fw_aruba
-✓ Found 3077 CVEs with confirmed Metasploit modules (Rapid7 official)
+  ✓ [36/58] packetstorm
 ✓ Found 3 Shodan InternetDB enriched hosts
 
+🇪🇺 Fetching CERT/NCSC Threat Reports...
+  ✓ [37/58] shodan
+✓ Found 100 Talos/community IPs (source: cinsscore)
+
 🦠 Fetching Hybrid Analysis public malware feed...
-  ✓ [38/58] gn_threats
-  ✓ [39/58] shodan
+  ✓ [38/58] talos
+✓ Found 5 Check Point advisories
+  ✓ [39/58] fw_checkpoint
+  ⚠️  CISA ransomware alerts-json: HTTP 403
 ✓ Found 0 SSL blacklist IPs from Abuse.ch
   ✓ [40/58] sslbl
+  ✓ BleepingComputer             OK (8 items)
 ✓ Found 1 Zyxel advisories
   ✓ [41/58] fw_zyxel
-  ✗ www.cisa.gov: HTTP 403
 ✓ Found 0 Barracuda advisories
   ✓ [42/58] fw_barracuda
+  ✗ www.cisa.gov: HTTP 403
+✓ Found 0 Aruba/HPE advisories
 ✓ Found 0 pfSense/Netgate advisories
-  ✓ [43/58] fw_pfsense
-  ✓ BleepingComputer             OK (8 items)
-✓ Found 0 Citrix advisories
+  ✓ [43/58] fw_aruba
+  ✓ [44/58] fw_pfsense
+  URLScan.io query 'recent live scans (broadest fallback)' returned 0 results — trying next...
   ✗ WiredSecurity                OK (0 items)
-  ✓ [44/58] fw_citrix
-  ✓ SecurityAffairs              OK (8 items)
-  ✓ DarkReading                  OK (4 items)
+  ✓ [45/58] gn_benign
+✓ Found 5 WatchGuard advisories
   ✗ SCMagazine                   HTTP 403
   ✗ KrebsOnSecurity              OK (0 items)
-✓ Found 0 SonicWall advisories
+  ⚠️  CISA ransomware advisory-rss: HTTP 403
+✗ CISA ransomware feed unavailable
+  ✓ [46/58] fw_watchguard
+  ✓ [47/58] cisa_ransomware
+  ✓ SecurityAffairs              OK (7 items)
+✓ Found 0 Citrix advisories
+  ✓ [48/58] fw_citrix
   ✓ TheHackerNews                OK (8 items)
-  ✓ [45/58] fw_sonicwall
-✓ Found 4 SANS ISC diary entries
-  ✓ [46/58] sans_isc
-✓ Found 5 WatchGuard advisories
-  ✓ [47/58] fw_watchguard
+  ✓ DarkReading                  OK (4 items)
 ✓ Found 5 Fortinet advisories
-  ✓ [48/58] fw_fortinet
-✓ Found 5 Cisco advisories
-  ✓ [49/58] fw_cisco
-  🔍 NVD API: HTTP 200
-✓ Found 1289 CVEs from NVD
+✓ Found 0 SonicWall advisories
+  ✓ [49/58] fw_fortinet
+  ✓ [50/58] fw_sonicwall
+✓ Found 4 SANS ISC diary entries
+  ✓ [51/58] sans_isc
+  ✓ SecurityWeek                 OK (3 items)
   ✓ InfoSecurityMagazine         OK (6 items)
-  ✓ [50/58] cves
-  ✓ SecurityWeek                 OK (7 items)
-  ✓ Hybrid Analysis: 30 malware samples
-  ✓ [51/58] hybridanalysis
-✓ Found 1 Juniper advisories
+✓ Found 5 Cisco advisories
+  ✓ [52/58] fw_cisco
   ✓ SANS-ISC-RSS                 OK (1 items)
-  ✓ [52/58] fw_juniper
-✓ Found 30 ZDI advisories
-  ✓ [53/58] zdi
-✓ Found 0 Sophos advisories
-  ✓ [54/58] fw_sophos
-  ✓ HackRead                     OK (6 items)
-✓ Total security news: 48 items from 11 active sources
-  ✓ [55/58] security_news
+  ✓ Hybrid Analysis: 30 malware samples
+  ✓ [53/58] hybridanalysis
   ✗ www.ncsc.gov.uk: HTTP 404
 ✗ CERT/NCSC: all endpoints failed — skipping
-  ✓ [56/58] certeu
-✓ Found 0 new malware samples
-  ✓ [57/58] malware
-✓ Found 30 ThreatFox IOCs
-  ✓ [58/58] threatfox
+✓ Found 27 ZDI advisories
+  ✓ [54/58] certeu
+  ✓ [55/58] zdi
+  ✓ HackRead                     OK (4 items)
+✓ Total security news: 41 items from 11 active sources
+  ✓ [56/58] security_news
+✓ Found 1 Juniper advisories
+  ✓ [57/58] fw_juniper
+✓ Found 0 Sophos advisories
+  ✓ [58/58] fw_sophos
 ✅ Fetched all 58 sources!
 
 
@@ -285,23 +284,23 @@ Fetching exposed RDP hosts from LeakIX...
 📡 RESOURCE HEALTH REPORT
 ══════════════════════════════════════════════════════════════════════
 
-✅ FETCHED & ENRICHED (35 sources):
+✅ FETCHED & ENRICHED (36 sources):
   Source                         Friendly Name                 Records  MITRE Mapped
   ────────────────────────────── ──────────────────────────── ────────  ──────────────
   gn_threats                     MSF Modules (Rapid7)            3,077  ~ Feed only
   kev                            CISA KEV                        1,529  ~ Feed only
-  cves                           NVD CVE API                     1,289  ✓ CWE+Keyword
+  cves                           NVD CVE API                     1,306  ✓ CWE+Keyword
   talos                          Talos IP Blacklist                100  ~ IP/IOC only
   emerging                       Emerging Threats IPs               50  ~ IP/IOC only
   spamhaus                       Spamhaus DROP                      50  ~ IP/IOC only
-  security_news                  Security News RSS                  48  ✓ Keyword
+  security_news                  Security News RSS                  41  ✓ Keyword
   blocklist                      Blocklist.de                       30  ~ IP/IOC only
   phish                          OpenPhish                          30  ~ IP/IOC only
   threatfox                      ThreatFox IOCs                     30  ✓ Keyword
   threatminer                    ThreatMiner                        30  ~ Feed only
   tor                            TOR Exit Nodes                     30  ~ IP/IOC only
   urlhaus                        URLhaus                            30  ~ IP/IOC only
-  zdi                            ZDI Advisories                     30  ✓ CWE+Keyword
+  zdi                            ZDI Advisories                     27  ✓ CWE+Keyword
   abuseip                        AbuseIPDB                          25  ~ IP/IOC only
   censys_rdp                     LeakIX Exposed RDP                 20  ~ Feed only
   github                         GitHub Advisories                  20  ✓ CWE+Keyword
@@ -309,6 +308,7 @@ Fetching exposed RDP hosts from LeakIX...
   redhat                         RedHat CVE API                     20  ✓ CWE+Keyword
   vulncheck_kev                  VulnCheck KEV                      20  ~ Feed only
   msrc                           Microsoft MSRC                     16  ✓ CWE+Keyword
+  cisa_ics                       CISA ICS Advisories                15  ~ Feed only
   exploits                       Exploit-DB RSS                     13  ✓ Keyword
   ubuntu                         Ubuntu Security                    10  ~ Feed only
   fw_paloalto                    Palo Alto Advisories                7  ~ Feed only
@@ -344,12 +344,11 @@ Fetching exposed RDP hosts from LeakIX...
   • sslbl                          SSLBL Abuse.ch               ↳ Abuse.ch SSL blacklist — CSV often empty or 0 IPs during scanning gaps
   • vulners                        Vulners API                  ↳ Vulners API — set VULNERS_API_KEY for CVE data; falls back to CIRCL (unreliable)
 
-⚠️  SILENT FAILURES — returned 0 records, no exception (3 sources):
+⚠️  SILENT FAILURES — returned 0 records, no exception (2 sources):
   These sources responded (no crash) but gave back nothing.
   Likely causes: rate limit, feed format change, 204/empty body.
 
   • certeu                         CERT/NCSC
-  • cisa_ics                       CISA ICS Advisories
   • cisa_ransomware                CISA Ransomware
 
 🔑 SKIPPED — Missing API Key (1 sources):
@@ -359,22 +358,22 @@ Fetching exposed RDP hosts from LeakIX...
 
 ══════════════════════════════════════════════════════════════════════
 📊 SUMMARY:
-  ✅ Active sources:          35  (6,558 total records)
+  ✅ Active sources:          36  (6,580 total records)
   ℹ️  Stubs/Plan-limited:      18  (by design or paid-tier — see report above)
-  ⚠️  True silent failures:     3  (responded but unexpectedly empty)
+  ⚠️  True silent failures:     2  (responded but unexpectedly empty)
   🔑 Missing API keys:         1  (skipped, no crash)
   💀 Hard failures:            0  (exception caught)
   📡 Total tasks attempted:   57
 ══════════════════════════════════════════════════════════════════════
 
 🛡️  Total firewall advisories collected: 29
-🎯 ZDI advisories collected:             30
-🔬 NVD CVE enrichment active:          1289 CVEs fetched
+🎯 ZDI advisories collected:             27
+🔬 NVD CVE enrichment active:          1306 CVEs fetched
 📡 SANS ISC diary entries:                4
-📰 Security news items:                   48
+📰 Security news items:                   41
 
 🔍 Enriching IOCs (ip-api.com + URLScan.io)...
-✓ IOC enrichment: 14 IPs (ip-api.com+AbuseIPDB) + 6 URLs (URLScan.io)
+✓ IOC enrichment: 14 IPs (ip-api.com+AbuseIPDB) + 16 URLs (URLScan.io)
 
 📊 Processing ALL threat intelligence (50+ sources)...
 
@@ -384,105 +383,628 @@ Fetching exposed RDP hosts from LeakIX...
   ✓ Enriched 20/38 IPs (ip-api.com + AbuseIPDB)
 🔫 MSF module coverage: 3077 CVEs with confirmed Metasploit exploit modules
 
-🔮 Fetching EPSS scores (v5.1: KEV-first priority + multi-batch up to 500 CVEs)...
-  🔮 EPSS: querying 500 CVEs (201 KEV-priority, 299 others) in batches of 100
+🔮 Fetching EPSS scores (KEV-first priority + multi-batch, ALL CVEs)...
+  🔮 EPSS: querying 1523 CVEs (201 KEV-priority, 1322 others) in batches of 100
   🔮 EPSS batch 1: HTTP 200 | 100 CVEs
-    ✓ Batch 1: 99/100 scored (running total: 99)
+    ✓ Batch 1: 100/100 scored (running total: 100)
   🔮 EPSS batch 2: HTTP 200 | 100 CVEs
-    ✓ Batch 2: 100/100 scored (running total: 199)
+    ✓ Batch 2: 100/100 scored (running total: 200)
   🔮 EPSS batch 3: HTTP 200 | 100 CVEs
-    ✓ Batch 3: 77/100 scored (running total: 276)
+    ✓ Batch 3: 99/100 scored (running total: 299)
   🔮 EPSS batch 4: HTTP 200 | 100 CVEs
-    ✓ Batch 4: 80/100 scored (running total: 356)
+    ✓ Batch 4: 95/100 scored (running total: 394)
   🔮 EPSS batch 5: HTTP 200 | 100 CVEs
-    ✓ Batch 5: 81/100 scored (running total: 437)
-  ✓ EPSS total: 437/500 CVEs scored
-  ✓ EPSS enrichment: 437/1507 CVEs scored
+    ✓ Batch 5: 99/100 scored (running total: 493)
+  🔮 EPSS batch 6: HTTP 200 | 100 CVEs
+    ✓ Batch 6: 100/100 scored (running total: 593)
+  🔮 EPSS batch 7: HTTP 200 | 100 CVEs
+    ✓ Batch 7: 99/100 scored (running total: 692)
+  🔮 EPSS batch 8: HTTP 200 | 100 CVEs
+    ✓ Batch 8: 99/100 scored (running total: 791)
+  🔮 EPSS batch 9: HTTP 200 | 100 CVEs
+    ✓ Batch 9: 100/100 scored (running total: 891)
+  🔮 EPSS batch 10: HTTP 200 | 100 CVEs
+    ✓ Batch 10: 97/100 scored (running total: 988)
+  🔮 EPSS batch 11: HTTP 200 | 100 CVEs
+    ✓ Batch 11: 98/100 scored (running total: 1086)
+  🔮 EPSS batch 12: HTTP 200 | 100 CVEs
+    ✓ Batch 12: 96/100 scored (running total: 1182)
+  🔮 EPSS batch 13: HTTP 200 | 100 CVEs
+    ✓ Batch 13: 100/100 scored (running total: 1282)
+  🔮 EPSS batch 14: HTTP 200 | 100 CVEs
+    ✓ Batch 14: 99/100 scored (running total: 1381)
+  🔮 EPSS batch 15: HTTP 200 | 100 CVEs
+    ✓ Batch 15: 95/100 scored (running total: 1476)
+  🔮 EPSS batch 16: HTTP 200 | 23 CVEs
+    ✓ Batch 16: 23/23 scored (running total: 1499)
+  ✓ EPSS total: 1499/1523 CVEs scored
+  ✓ EPSS enrichment: 1499/1523 CVEs scored
 
 🎯 Building ZDI cross-correlation map (CVE ID + product keyword fallback)...
-  ✓ ZDI: 29 CVEs with ZDI advisories, 3 product keywords indexed
+  ✓ ZDI: 26 CVEs with ZDI advisories, 3 product keywords indexed
 
-🔬 Building NVD CVE detail enrichment (high-priority CVEs)......
+🔬 Building NVD CVE detail enrichment (ALL CVEs — full coverage)......
+  → Enriching 2834 CVEs (all tiers, priority ordered)
 
-🔬 NVD CVE Detail Enrichment: querying 60 high-priority CVEs...
-  ✓ NVD enrichment: 44/60 CVEs enriched with CWE + refs + exploit signals
-  ✓ AttackerKB: 40 CVEs with non-zero scores (queried 44)
+🔬 NVD CVE Detail Enrichment: querying ALL 2834 CVEs (full coverage)...
+  ℹ️  No NVD_API_KEY — using free tier (5 req/30s). Set NVD_API_KEY for 10x speed.
+  ⚠️  NVD rate limited HTTP 429 (23 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (24 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (34 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (37 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (38 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (47 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (50 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (58 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (64 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (70 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (72 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (80 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (94 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (98 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (99 done) — sleeping 6s
+  🔬 NVD progress: 100/2834 queried, 100 enriched
+  ⚠️  NVD rate limited HTTP 429 (106 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (107 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (115 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (116 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (119 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (125 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (130 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (132 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (139 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (141 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (155 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (157 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (158 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (163 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (165 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (168 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (177 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (183 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (191 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (198 done) — sleeping 6s
+  🔬 NVD progress: 200/2834 queried, 200 enriched
+  ⚠️  NVD rate limited HTTP 429 (208 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (211 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (219 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (223 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (228 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (237 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (239 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (245 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (248 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (255 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (257 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (266 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (272 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (285 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (286 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (295 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (299 done) — sleeping 6s
+  🔬 NVD progress: 300/2834 queried, 300 enriched
+  ⚠️  NVD rate limited HTTP 429 (308 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (315 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (319 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (329 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (341 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (342 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (344 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (356 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (358 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (365 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (367 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (370 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (373 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (385 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (389 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (396 done) — sleeping 6s
+  🔬 NVD progress: 400/2834 queried, 400 enriched
+  ⚠️  NVD rate limited HTTP 429 (403 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (404 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (409 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (420 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (426 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (434 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (436 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (437 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (439 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (440 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (447 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (448 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (457 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (463 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (467 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (471 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (478 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (479 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (484 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (486 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (491 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (494 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (496 done) — sleeping 6s
+  🔬 NVD progress: 500/2834 queried, 500 enriched
+  ⚠️  NVD rate limited HTTP 429 (510 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (514 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (518 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (520 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (521 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (523 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (526 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (531 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (534 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (535 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (539 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (541 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (544 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (548 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (559 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (561 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (561 done) — sleeping 12s
+  ⚠️  NVD rate limited HTTP 429 (564 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (570 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (580 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (583 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (587 done) — sleeping 6s
+  🔬 NVD progress: 600/2834 queried, 600 enriched
+  ⚠️  NVD rate limited HTTP 429 (602 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (606 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (609 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (611 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (622 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (627 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (629 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (641 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (641 done) — sleeping 12s
+  ⚠️  NVD rate limited HTTP 429 (649 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (652 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (658 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (667 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (671 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (671 done) — sleeping 12s
+  ⚠️  NVD rate limited HTTP 429 (674 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (680 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (683 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (685 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (689 done) — sleeping 6s
+  🔬 NVD progress: 700/2834 queried, 700 enriched
+  ⚠️  NVD rate limited HTTP 429 (706 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (709 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (716 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (721 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (723 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (728 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (732 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (736 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (739 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (749 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (751 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (759 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (763 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (767 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (781 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (784 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (786 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (795 done) — sleeping 6s
+  🔬 NVD progress: 800/2834 queried, 800 enriched
+  ⚠️  NVD rate limited HTTP 429 (800 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (803 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (806 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (811 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (813 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (819 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (827 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (830 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (838 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (843 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (859 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (863 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (869 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (874 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (880 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (884 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (889 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (895 done) — sleeping 6s
+  🔬 NVD progress: 900/2834 queried, 900 enriched
+  ⚠️  NVD rate limited HTTP 429 (901 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (905 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (908 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (909 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (913 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (921 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (921 done) — sleeping 12s
+  ⚠️  NVD rate limited HTTP 429 (928 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (931 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (938 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (944 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (948 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (950 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (953 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (956 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (960 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (965 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (967 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (972 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (986 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (989 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (994 done) — sleeping 6s
+  🔬 NVD progress: 1000/2834 queried, 1000 enriched
+  ⚠️  NVD rate limited HTTP 429 (1003 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1007 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1009 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1015 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1024 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1026 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1034 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1037 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1041 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1043 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1048 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1052 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1059 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1068 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1073 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1078 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1082 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1094 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1095 done) — sleeping 6s
+  🔬 NVD progress: 1100/2834 queried, 1100 enriched
+  ⚠️  NVD rate limited HTTP 429 (1102 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1106 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1113 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1115 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1121 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1124 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1140 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1148 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1150 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1150 done) — sleeping 12s
+  ⚠️  NVD rate limited HTTP 429 (1156 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1162 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1171 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1176 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1187 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1190 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1196 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1198 done) — sleeping 6s
+  🔬 NVD progress: 1200/2834 queried, 1200 enriched
+  ⚠️  NVD rate limited HTTP 429 (1201 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1207 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1216 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1222 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1233 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1237 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1246 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1248 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1255 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1259 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1262 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1263 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1267 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1275 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1281 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1285 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1287 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1291 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1297 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1298 done) — sleeping 6s
+  🔬 NVD progress: 1300/2834 queried, 1300 enriched
+  ⚠️  NVD rate limited HTTP 429 (1305 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1309 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1310 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1317 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1320 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1325 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1327 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1332 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1332 done) — sleeping 12s
+  ⚠️  NVD rate limited HTTP 429 (1340 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1346 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1357 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1358 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1372 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1380 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1382 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1384 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1387 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1394 done) — sleeping 6s
+  🔬 NVD progress: 1400/2834 queried, 1400 enriched
+  ⚠️  NVD rate limited HTTP 429 (1405 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1408 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1412 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1415 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1416 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1439 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1443 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1444 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1452 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1460 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1464 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1473 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1474 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1483 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1491 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1497 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1499 done) — sleeping 6s
+  🔬 NVD progress: 1500/2834 queried, 1500 enriched
+  ⚠️  NVD rate limited HTTP 429 (1504 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1506 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1516 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1520 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1529 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1531 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1539 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1545 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1552 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1557 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1560 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1562 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1569 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1571 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1577 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1578 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1583 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1591 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1595 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1596 done) — sleeping 6s
+  🔬 NVD progress: 1600/2834 queried, 1600 enriched
+  ⚠️  NVD rate limited HTTP 429 (1603 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1611 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1613 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1618 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1622 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1625 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1629 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1635 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1640 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1643 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1651 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1655 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1658 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1663 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1667 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1679 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1680 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1685 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1686 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1687 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1688 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1694 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1696 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1698 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1699 done) — sleeping 6s
+  🔬 NVD progress: 1700/2834 queried, 1700 enriched
+  ⚠️  NVD rate limited HTTP 429 (1702 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1724 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1727 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1733 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1742 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1746 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1755 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1763 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1768 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1770 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1771 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1775 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1781 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1788 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1793 done) — sleeping 6s
+  🔬 NVD progress: 1800/2834 queried, 1800 enriched
+  ⚠️  NVD rate limited HTTP 429 (1802 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1807 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1812 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1815 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1824 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1830 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1834 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1840 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1842 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1843 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1847 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1850 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1855 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1857 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1858 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1867 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1873 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1876 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1886 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1889 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1890 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1899 done) — sleeping 6s
+  🔬 NVD progress: 1900/2834 queried, 1900 enriched
+  ⚠️  NVD rate limited HTTP 429 (1904 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1905 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1912 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1918 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1922 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1931 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1932 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1937 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1948 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1952 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1960 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1965 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1970 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1975 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1983 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1988 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1995 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (1997 done) — sleeping 6s
+  🔬 NVD progress: 2000/2834 queried, 2000 enriched
+  ⚠️  NVD rate limited HTTP 429 (2005 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2010 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2014 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2017 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2018 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2031 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2031 done) — sleeping 12s
+  ⚠️  NVD rate limited HTTP 429 (2041 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2043 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2044 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2049 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2052 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2057 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2061 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2063 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2072 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2074 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2076 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2079 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2084 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2088 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2093 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2099 done) — sleeping 6s
+  🔬 NVD progress: 2100/2834 queried, 2100 enriched
+  ⚠️  NVD rate limited HTTP 429 (2103 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2108 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2110 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2110 done) — sleeping 12s
+  ⚠️  NVD rate limited HTTP 429 (2114 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2122 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2126 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2132 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2135 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2139 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2142 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2150 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2154 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2156 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2161 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2165 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2175 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2178 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2182 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2186 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2187 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2197 done) — sleeping 6s
+  🔬 NVD progress: 2200/2834 queried, 2200 enriched
+  ⚠️  NVD rate limited HTTP 429 (2200 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2207 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2218 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2220 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2223 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2227 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2231 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2232 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2241 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2243 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2253 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2255 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2260 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2265 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2269 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2270 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2282 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2290 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2291 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2293 done) — sleeping 6s
+  🔬 NVD progress: 2300/2834 queried, 2300 enriched
+  ⚠️  NVD rate limited HTTP 429 (2306 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2313 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2314 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2319 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2325 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2335 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2345 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2346 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2350 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2362 done) — sleeping 6s
+  ⚠️  NVD rate limited HTTP 429 (2363 done) — sleeping 6s
+  ✓ NVD enrichment complete: 2374/2374 CVEs enriched with CWE + refs + exploit signals
+  ✓ NVD Enrichment: 2191 CVEs with non-zero scores (queried 2374)
 
 📰 Building security news cross-correlation map...
-  ✓ News coverage: 4 CVEs mentioned in security news
+  ✓ News coverage: 2 CVEs mentioned in security news
 ✓ All enrichment layers ready
 
-✓ Processed 1705 threats (before MSRC/Windows/Patch Tuesday)
+✓ Processed 1737 threats (before MSRC/Windows/Patch Tuesday)
 
-🔍 DEBUG: Regular CVE IDs: 1289 | MSRC to process: 16
-🔍 DEBUG: MSRC added: 14, skipped: 2
+🔍 DEBUG: Regular CVE IDs: 1306 | MSRC to process: 16
+🔍 DEBUG: MSRC added: 16, skipped: 0
 
-🎯 Processing 30 ZDI advisories...
+🎯 Processing 27 ZDI advisories...
 
 📡 Processing 4 SANS ISC diary entries...
 
-📰 Processing 42 keyword-only security news alerts...
+📰 Processing 35 keyword-only security news alerts...
 
-🔗 Cross-source CVE deduplication (1996 threats pre-dedup)...
-  ✓ Deduplication complete: 1975 unique threats (21 duplicates merged)
+🔗 Cross-source CVE deduplication (2020 threats pre-dedup)...
+  ✓ Deduplication complete: 1999 unique threats (21 duplicates merged)
 
 🎯 v5.7 Multi-source accuracy validation pass...
-  ✓ Accuracy pass: 1 threats upgraded (confidence/exploit_status)
-✓ Connected to PostgreSQL: anubis_db@localhost
-✓ DB run started (run_id=2)
+  ✓ Accuracy pass: 17 threats upgraded (confidence/exploit_status)
 
-⚠️  Existing file is missing columns {'Description', 'Type', 'ID'} — schema mismatch.
+⚠️  Existing file is missing columns {'Type', 'ID', 'Description'} — schema mismatch.
     Backing up old file and starting fresh database.
-    Backup saved: threat_intelligence_log_backup_20260226_134632.xlsx
+    Backup saved: threat_intelligence_log_backup_20260227_162850.xlsx
 ✓ Database updated: threat_intelligence_log.xlsx
-✓ Total entries: 1975
-
-💾 Saving 1975 threats to PostgreSQL...
-  ✓ Batch 1: 500 threats saved
-  ✓ Batch 2: 500 threats saved
-  ✓ Batch 3: 470 threats saved
-  ✓ Batch 4: 475 threats saved
-✓ DB complete: 351 new | 1594 updated | 0 errors
-✓ DB run finished (run_id=2, new=351, updated=1594)
-
-============================================================
-🐘 POSTGRESQL DATABASE STATS
-============================================================
-  Total threats in DB:    2,446
-  P1 Critical:            112
-  P2 High:                81
-  CISA KEV:               32
-  With MSF exploit:       50
-  Trending:               89
-  High EPSS (≥50%):       2
-  In the wild:            0
-  New last 24h:           2,446
-  New last 7 days:        2,446
-  Avg CVSS score:         6.75
-  Last updated:           2026-02-26 13:46:34.398039+00:00
-============================================================
+✓ Total entries: 1999
 
 📊 Applying Excel formatting (AutoFilter + Dashboard)...
   ✓ AutoFilter applied to all columns
-  ✓ Styled 1975 data rows with severity colour coding
-  ✓ Dashboard created with 26 threat type rows + COUNTIFS formulas
+  ✓ Styled 1999 data rows with severity colour coding
+  ✓ Dashboard created with 27 threat type rows + COUNTIFS formulas
   ✓ AutoFilter + freeze panes applied to main sheet
   ✓ Risk heatmap + bar + pie charts added to dashboard
   ✓ Saved: threat_intelligence_log.xlsx
 
 🔵 Adding PowerBI_Export sheet...
-  ✓ PowerBI_Export sheet added (1975 rows × 27 cols)
+  ✓ PowerBI_Export sheet added (1999 rows × 27 cols)
   ✓ PowerBI_Export sheet saved
 
+🐘 Syncing to PostgreSQL...
+✓ Connected to PostgreSQL: anubis_db@localhost
+✓ DB run started (run_id=5)
+
+💾 Saving 1999 threats to PostgreSQL...
+  ✓ Batch 1: 500 threats saved
+  ✓ Batch 2: 500 threats saved
+  ✓ Batch 3: 470 threats saved
+  ✓ Batch 4: 499 threats saved
+✓ DB complete: 45 new | 1924 updated | 0 errors
+✓ DB run finished (run_id=5, new=45, updated=1924)
+
+============================================================
+🐘 POSTGRESQL DATABASE STATS
+============================================================
+  Total threats in DB:    2,994
+  P1 Critical:            117
+  P2 High:                782
+  CISA KEV:               34
+  With MSF exploit:       50
+  Trending:               125
+  High EPSS (≥50%):       2
+  In the wild:            0
+  New last 24h:           548
+  New last 7 days:        2,994
+  Avg CVSS score:         6.73
+  Last updated:           2026-02-27 16:29:02.514574+00:00
+============================================================
+
+📊 Loading full DB for dashboard generation...
+  ✓ Loaded 2,994 threats from full DB for dashboard
+
 Generating HTML dashboard → anubis_threat_dashboard.html
-  HTML dashboard written: anubis_threat_dashboard.html (1933KB)
+  HTML dashboard written: anubis_threat_dashboard.html (2273KB)
   ✓ Dashboard: anubis_threat_dashboard.html — open in browser or import into Power BI via Get Data → Web
 
 Sending threat report email...
-Report email sent to ramizalsafi.1997@gmail.com
+Email not configured — skipping.
 ✓ Last run time updated
 
 ============================================================
 Process completed successfully.
-Finished: 2026-02-26 15:46:45
+Finished: 2026-02-27 18:29:03
 ============================================================
+
+============================================================
+🧹 POST-RUN CLEANUP
+============================================================
+  🗑️  Deleted (1):
+       - threat_intelligence_log_backup_20260227_162850.xlsx
+  ✅ Kept: AnbuisDB, Anubis_hunter_v6_4.py, __pycache__, anubis_db.py, anubis_schema.sql, anubis_threat_dashboard.html, threat_intelligence_log.xlsx
+
+🌐 NGINX SYNC
+  ✗ Permission denied copying to /var/www/anubis/anubis_threat_dashboard.html
+     Fix: sudo chown ubuntu:ubuntu /var/www/anubis
