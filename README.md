@@ -72,7 +72,7 @@ Threat Feeds (40+)
   ┌─────────────────────────────────────┐
   │       Post-Run Cleanup              │
   ├── Deletes stale backup files        │ ← New in v6.1
-  └── Syncs dashboard to /var/www/anubis│
+  └── Syncs dashboard │
   └─────────────────────────────────────┘
        ↓
   ┌─────────────────────────────────────┐
