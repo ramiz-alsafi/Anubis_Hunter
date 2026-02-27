@@ -181,7 +181,7 @@ PostgreSQL backend with:
 ## 🔥 UFW Firewall Rules
 
 ```
-# SSH locked to your IP
+# SSH locked to specfic IP
 # HTTP (redirects to HTTPS)
 # HTTPS
 # Wazuh agent comms
