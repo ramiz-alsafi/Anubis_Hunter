@@ -101,9 +101,9 @@ Threat Feeds (40+)
   │  Nginx Reverse Proxy                │
   ├── HTTPS via Let's Encrypt (Certbot) │
   ├── DuckDNS — anubispro.duckdns.org   │
-  ├── TLS 1.2 / 1.3 only               │
+  ├── TLS 1.2 / 1.3 only                │
   ├── Sensitive file access blocked     │
-  └── UFW — ports 80, 443, 22, 1514,   │
+  └── UFW — ports 80, 443, 1514,        │
              1515, 55000 (locked)       │
   └─────────────────────────────────────┘
 ```
