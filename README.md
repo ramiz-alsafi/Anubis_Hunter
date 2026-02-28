@@ -46,7 +46,7 @@ The EC2 instance running Anubis is hardened and actively monitored. The platform
 
 - **Python** — core engine
 - **PostgreSQL** — persistent backend, 3,100+ threats tracked across runs
-- **Nginx + Let's Encrypt** — HTTPS dashboard, live at [anubispro.duckdns.org](https://anubispro.duckdns.org)
+- **Nginx + (SSL)** — HTTPS dashboard, live at [anubispro.duckdns.org](https://anubispro.duckdns.org)
 - **Wazuh** — host defense, (wazuh-agent), active response
 - **AWS EC2** — deployment
 - **Postfix** — automated email delivery
