@@ -21,7 +21,7 @@ The EC2 instance running Anubis is hardened and actively monitored. The platform
 - Persists all data to a **PostgreSQL backend** with full historical tracking across runs
 - Generates an **interactive HTML dashboard** served live at [anubispro.duckdns.org](https://anubispro.duckdns.org)
 - Delivers a formatted **Excel database** and **email report** on every run
-- The host is protected by a **Wazuh SIEM deployment** with active response and VirusTotal integration
+- The host is protected by a **Wazuh agent deployment** with active response and VirusTotal integration
 
 ---
 
@@ -47,7 +47,7 @@ The EC2 instance running Anubis is hardened and actively monitored. The platform
 - **Python** — core engine
 - **PostgreSQL** — persistent backend, 3,100+ threats tracked across runs
 - **Nginx + Let's Encrypt** — HTTPS dashboard, live at [anubispro.duckdns.org](https://anubispro.duckdns.org)
-- **Wazuh** — host defense, SIEM, active response
+- **Wazuh** — host defense, (wazuh-agent), active response
 - **AWS EC2** — deployment
 - **Postfix** — automated email delivery
 
@@ -67,7 +67,7 @@ HTTPS only, TLS 1.2/1.3, hardened Nginx config, UFW firewall with locked-down in
 |---|---|---|
 | Phase 1–4 | ✅ Done | Core feeds, enrichment, Excel/HTML output, email alerts |
 | Phase 5 | ✅ Done | PostgreSQL backend |
-| Phase 6 | ✅ Done | Wazuh SIEM + host defense + public deployment |
+| Phase 6 | ✅ Done | Wazuh agent + host defense + public deployment |
 | Phase 7 | 📋 Planned | Web dashboard — FastAPI + React |
 | Phase 8 | 📋 Planned | Real-time alerting — Slack/Teams |
 | Phase 9 | 📋 Planned | ML-based risk prediction |
