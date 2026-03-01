@@ -1,3 +1,6 @@
+<img width="1024" height="559" alt="image" src="https://github.com/user-attachments/assets/fcb4ef97-2088-4079-8ab0-3629128c5a8b" />
+
+
 🐺 Anubis — The Ultimate Threat Intelligence Hunter
 A high-performance automated threat intelligence platform that aggregates, analyzes, and reports on global security risks in real-time. Designed to provide instant visibility into the evolving threat landscape.
 By Ramiz Alsafi | Deployed on AWS EC2 | v6.5.0
