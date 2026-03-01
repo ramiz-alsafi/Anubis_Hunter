@@ -149,7 +149,7 @@ The EC2 instance running Anubis is monitored by a **Wazuh agent** deployed in fu
 | Phase 5 | ✅ Complete | PostgreSQL backend — persistent storage, upsert, run tracking |
 | Phase 6 | ✅ Complete | Wazuh SIEM integration — host defense, FIM, custom rules, active response |
 | Phase 6.4 | ✅ Complete | Dashboard v2 — Risk Calculator, GRC/Compliance, MITRE ATT&CK live chart, interactive timeline |
-| Phase 7 | 🔄 In Progress | Web frontend (FastAPI + React) — replace static HTML with live backend (djano)|
+| Phase 7 | 🔄 In Progress | Web frontend (FastAPI + React) — replace static HTML with live backend (django)|
 | Phase 8 | 📋 Planned | Sandbox & Emulation — isolated CVE/exploit testing against vendor-specific environments |
 | Phase 9 | 📋 Planned | Real-time alerting — Slack/Teams integration, webhook support |
 | Phase 10 | 📋 Planned | ML-based risk prediction |
