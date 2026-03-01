@@ -17,7 +17,7 @@ Anubis is a self-hosted threat intelligence platform that runs on a schedule and
 - Persists all threat data to **PostgreSQL** with full historical tracking and upsert logic
 - Generates a formatted **Excel database** with color-coded severity and dashboard charts
 - Generates an **interactive HTML dashboard** (~4MB rich report, no external dependencies)
-- Sends a full **threat report email** with both files attached via Postfix + Gmail relay
+- Sends a full **threat report email** with both files attached
 - Defends itself: the EC2 instance running Anubis is protected by a **Wazuh agent** with custom detection rules, FIM, and active response
 
 ---
