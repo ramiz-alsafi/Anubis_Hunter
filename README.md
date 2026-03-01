@@ -1,6 +1,9 @@
 <img width="1252" height="768" alt="Gemini_Generated_Image_5v5rnd5v5rnd5v5r" src="https://github.com/user-attachments/assets/f2171717-ff15-404a-93dc-a6d811ec88b2" />
 
 
+
+---
+
 🐺 Anubis — The Ultimate Threat Intelligence Hunter
 A high-performance automated threat intelligence platform that aggregates, analyzes, and reports on global security risks in real-time. Designed to provide instant visibility into the evolving threat landscape.
 By Ramiz Alsafi | Deployed on AWS EC2 | v6.5.0
@@ -47,7 +50,8 @@ Active Exploits Tracked
 1,529 (CISA KEV)
 System Failures
 0 (Stable)
-
+---
+---
 📡 Data Sources (60 Concurrent)
 Category	Sources
 CVE / Vulnerability	NVD, CISA KEV, VulnCheck KEV, RedHat, GitHub Advisories, CIRCL, OSV.dev, Vulners
@@ -61,6 +65,8 @@ News & Reports	SANS ISC, BleepingComputer, TheHackerNews, SecurityAffairs, DarkR
 Microsoft	MSRC (official REST API), Windows CVEs, Patch Tuesday
 MITRE	ATT&CK Enterprise STIX bundle (691 techniques/sub-techniques), CWE mapping
 Other	CERT/NCSC, CISA Ransomware, Ubuntu Security, AI Incident Database, Huntr AI/ML CVEs
+---
+---
 ⚙️ Architecture
 Threat Feeds (60 concurrent)
        ↓
@@ -102,7 +108,8 @@ Threat Feeds (60 concurrent)
   Wazuh Manager
 📊 Interactive Dashboard
 The generated HTML dashboard is fully self-contained (no backend, no external libraries) and includes:
-
+---
+---
 Overview Tab
 
 Risk level distribution, top threat types, remediation priority breakdown
@@ -122,6 +129,7 @@ Risk Calculator Tab — Input your budget, incident frequency, patch velocity, d
 GRC & Compliance Tab — ISO/IEC 27001:2022 Annex A and NIST SP 800-53 Rev 5 controls scored and color-coded based on actual threat composition. Open compliance gaps surfaced automatically.
 
 Sandbox & Emulation Tab (Coming Soon) — Isolated emulation environment for testing exploits and CVEs from the dataset against your own stack without touching production.
+---
 
 🗺️ Project Evolution
 Phase 1–6: ✅ Core Intelligence, Database Persistence, and Host Defense.
