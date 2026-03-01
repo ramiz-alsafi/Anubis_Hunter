@@ -116,12 +116,12 @@ The generated HTML dashboard is fully self-contained (no backend, no external li
 The EC2 instance running Anubis is monitored by a **Wazuh agent** deployed in full defense mode.
 
 **Live right now:**
-- Full log collection across 13 sources (auth, syslog, kernel, dpkg, apt, mail, cloud-init, postgresql, chrony, SSM, journald, dmesg)
-- File integrity monitoring in **realtime mode**
-- Custom detection rules for brute force, reverse shell attempts, malware staging, off-hours SSH, privilege escalation, and new user creation
-- **Active response** — firewall-drop fires automatically on confirmed brute force
-- **VirusTotal integration** — file hashes from FIM alerts checked against VT automatically
-- **Email alerting** — Wazuh alert emails for Level 6+ events in real time
+- **Full log collection across 13 sources** (auth, syslog, kernel, dpkg, apt, mail, cloud-init, postgresql, chrony, SSM, journald, dmesg)
+- **File integrity monitoring** in **realtime mode**
+- **Custom detection rules**
+- **Active response** 
+- **VirusTotal integration**
+- **Email alerting**
 
 
 ## 🔢 Sample Output (v6.4.9 run)
