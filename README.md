@@ -1,4 +1,4 @@
-<img width="1024" height="550" alt="image" src="https://github.com/user-attachments/assets/fcb4ef97-2088-4079-8ab0-3629128c5a8b" />
+<img width="1252" height="768" alt="Gemini_Generated_Image_5v5rnd5v5rnd5v5r" src="https://github.com/user-attachments/assets/f2171717-ff15-404a-93dc-a6d811ec88b2" />
 
 
 🐺 Anubis — The Ultimate Threat Intelligence Hunter
