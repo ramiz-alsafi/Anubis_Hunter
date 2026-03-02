@@ -11,7 +11,7 @@ A high-performance automated threat intelligence platform that aggregates, analy
 
 **By Ramiz Alsafi**  
 Deployed on AWS EC2  
-Version 6.5.0  
+Version 6.5.1  
 
 ---
 
@@ -61,7 +61,7 @@ Hosted on a hardened AWS EC2 instance with integrated defense monitoring.
 
 ---
 
-## 🔢 Performance Snapshot (v6.5.0)
+## 🔢 Performance Snapshot (v6.5.1)
 
 | Metric | Status |
 |--------|--------|
@@ -130,3 +130,63 @@ Risk Scoring (CVSS + EPSS + KEV + Exploit + Activity)
 └───────────────────────────────────────────────┘
        ↓
 Wazuh Manager
+```
+
+---
+
+## 🗃️ Enrichment & Feed Cache Layer (v6.5.1)
+
+All enrichment and correlation layers are now fully cached to eliminating redundant API calls on repeat runs and providing resilience against network failures.
+
+| Feed / Enrichment | Cache File | TTL |
+|---|---|---|
+| NVD Vendor Advisories (all 14 vendors) | 24h |
+| Vulners / CIRCL / NVD fallback  | 12h |
+| FireHOL L1 + L2 blocklists  | 12h |
+| Shodan InternetDB enrichment | 6h |
+| LeakIX vulnerable hosts | 6h |
+| LeakIX exposed services (per service) |6h |
+| AbuseIPDB blacklist | 6h |
+| EPSS scores (FIRST.org) | 6h |
+| Feodo Tracker C2 IPs |2h |
+| Talos / Community IP blacklist | 6h |
+| Blocklist.de | 6h |
+| Tor exit nodes  | 6h |
+| Emerging Threats IPs  | 6h |
+| MSF module coverage (Rapid7) | 24h |
+| AttackerKB CVE enrichment | PostgreSQL DB skip | Permanent |
+
+**Stale-cache fallback** — if any API is unreachable or rate-limited, the last successful result is served automatically. No silent data loss on network blips or API outages.
+
+---
+
+## 📋 Changelog
+
+### v6.5.1
+- **Fix:** Dashboard JavaScript syntax error caused by orphaned code block after  this broke all tab navigation and left the dashboard showing no numbers on every run
+- **Cache:** Added ` file caches to all enrichment and IP feed layers that previously re-queried on every run — cuts NVD vendor advisory calls from 14 per run to at most 1 per keyword per 24h
+- **Cache:** Shared  helpers replace duplicated boilerplate across all cached functions
+- **Resilience:** All new caches include stale-cache fallback on API errors and 429 rate-limit responses
+
+### v6.5.0
+- **Risk Calculator** — Added downloadable PDF report button + extended inputs (industry, size, data sensitivity)
+- **GRC Tab** — Added SOC 2, PCI DSS, DORA frameworks + compliance score + risk appetite gauge + action items
+- **Dashboard** — Fixed "Threats Over Time" empty chart date parse fallback chain
+- **Dashboard** — Fixed "MITRE ATT&CK Tactic Coverage"  fallback placeholder when data is sparse
+- **Dashboard** — Removed "Open Source SOC" label from footer
+- **Enrichment** — Parallelised NVD CVE enrichment with ThreadPoolExecutor (10 workers)
+- **Enrichment** — DB-aware skip — CVEs already enriched in DB are not re-queried
+- **Enrichment** — Full pipeline enrichment (NVD + CIRCL + ATKB) for ALL new data, not top portions
+- **Silent failures** — All bare except/pass blocks replaced with proper logged error handling
+- **API endpoints** — Fixed silent failures across all fetch_* functions with structured error reporting
+
+### v6.4.9
+- **Cleanup** is NEVER deleted (cron job writes here)
+- **Cleanup** — Only 1 backup xlsx kept at a time (older backups purged)
+- **MSRC** — Added proper MSRC REST API  as primary source
+- **CISA Ransomware** — Reordered endpoints XML feed first (JSON endpoints 403)
+- **Vulners** — Added NVD direct query as reliable 3rd fallback when CIRCL also fails
+- **EPSS** — Added retry pass for unscored CVEs
+- **SonicWall** — Fixed RSS endpoint discovery with multiple URL patterns
+- **Schema migration** — Missing columns now added gracefully (no DB nuke)
+- **AttackerKB** — Added separate NVD/ATKB coverage counters for visibility
