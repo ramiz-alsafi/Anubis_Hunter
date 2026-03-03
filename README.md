@@ -11,7 +11,7 @@ A high-performance automated threat intelligence platform that aggregates, analy
 
 **By Ramiz Alsafi**  
 Deployed on AWS EC2  
-Version 6.5.1  live at https://anubispro.duckdns.org/
+Version 6.5.1  live at https://anubispro.duckdns.org/ platform soon at https://riskwatchpro.duckdns.org/ 👀
 
 ---
 
